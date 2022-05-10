@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ForgotVerificationActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_actionbar4"
+        android:layout_width="0dp"
+        android:layout_height="71dp"
+        android:background="@color/gray"
+        android:fitsSystemWindows="true"
+        app:theme="@style/ToolbarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingClass" />
+
+    <View
+        android:id="@+id/view14"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/graycolor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_actionbar4" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/robotobold"
+        android:text="Email Verification"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view14" />
+
+    <TextView
+        android:id="@+id/changeemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Please enter the 4-digit code send to you at"
+        android:textColor="@color/graytextcolor"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+
+    <EditText
+        android:id="@+id/code1"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:background="@drawable/backgroundborder"
+        android:ems="10"
+        android:hint="3"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/code2"
+        app:layout_constraintEnd_toStartOf="@+id/code2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/code2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/code2"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:background="@drawable/backgroundborder"
+        android:ems="10"
+        android:hint="3"
+        android:elevation="5dp"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/code3"
+        app:layout_constraintEnd_toStartOf="@+id/code3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/code1"
+        app:layout_constraintTop_toTopOf="@+id/code3"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/code3"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:background="@drawable/backgroundborder"
+        android:ems="10"
+        android:hint="3"
+        android:elevation="5dp"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/code4"
+        app:layout_constraintEnd_toStartOf="@+id/code4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/code2"
+        app:layout_constraintTop_toTopOf="@+id/code4"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/code4"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/backgroundborder"
+        android:elevation="5dp"
+        android:ems="10"
+        android:hint="3"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/code3"
+        app:layout_constraintTop_toBottomOf="@+id/changeemail"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <View
+        android:id="@+id/submitbtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/backgroundborder"
+        android:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/robotobold"
+        android:text="Submit"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/submitbtn"
+        app:layout_constraintEnd_toEndOf="@+id/submitbtn"
+        app:layout_constraintStart_toStartOf="@+id/submitbtn"
+        app:layout_constraintTop_toTopOf="@+id/submitbtn" />
+</androidx.constraintlayout.widget.ConstraintLayout>

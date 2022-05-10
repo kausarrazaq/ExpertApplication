@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/drawable/backgroundborder.xml" value="0.169" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/drawable/borderforeditimage.xml" value="0.284" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/drawable/buttonbackgroundcolor.xml" value="0.3415" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/drawable/cardviewborder.xml" value="0.236" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/drawable/changetextcolor.xml" value="0.282" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/drawable/chatborderview.xml" value="0.138" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/drawable/hideborder.xml" value="0.212" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.284" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/drawable/iconsselector.xml" value="0.198" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/drawable/lineselector.xml" value="0.198" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/drawable/menuborder.xml" value="0.284" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/drawable/selector.xml" value="0.132" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/drawable/selectormenubar.xml" value="0.2525" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/drawable/signinwithgoogleborder.xml" value="0.2525" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_change_password.xml" value="0.2768595041322314" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_create_gigs.xml" value="0.22" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_create_new_password.xml" value="0.22" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_demo.xml" value="0.25" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_edit_profile.xml" value="0.22" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_filter.xml" value="0.22" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_forgot_verification.xml" value="0.20698924731182797" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_forgotpasswordmain.xml" value="0.22" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_home.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_location.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_main.xml" value="0.415625" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_message.xml" value="0.26109215017064846" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_profile_of_create_gig.xml" value="1.03125" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_profilefor_create_gig.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_rates.xml" value="0.30454545454545456" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_see_all_category.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_see_all_experts.xml" value="0.5489021956087824" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_sign_in.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_sign_up.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_start.xml" value="0.22" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/activity_user_profile.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/bottomsheetforeditimage.xml" value="1.03125" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/creategigslayout.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/demolayout.xml" value="0.3094523630907727" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/filterlayout.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/fragment_about.xml" value="0.2774327122153209" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/fragment_gigs.xml" value="0.45714285714285713" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/fragment_messages.xml" value="0.423728813559322" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/fragment_notification.xml" value="0.5431164901664145" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/fragment_profile.xml" value="0.40987219039224326" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/fragment_reviews.xml" value="1.03125" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/hideviewlayout.xml" value="0.13088012139605462" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/homelayoutforpopularcategory.xml" value="0.1" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/hometopratedlayout.xml" value="0.6" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/layoutforreviews.xml" value="0.3129742033383915" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/messagelayout.xml" value="0.8" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/messagepic.xml" value="1.03125" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/notificationlayout.xml" value="0.8594847775175644" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/searchviewlayout.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/seeallcategorylayout.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/layout/seeallexpertslayout.xml" value="0.22" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/menu/menu.xml" value="0.31643002028397565" />
+        <entry key="..\:/Users/kausa/AndroidStudioProjects/ExpertApplication/app/src/main/res/menu/menuforcreategigs.xml" value="0.599009900990099" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

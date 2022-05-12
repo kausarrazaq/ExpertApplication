@@ -6,19 +6,21 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.provider.OpenableColumns
 import android.util.Base64
 import android.view.MenuItem
 import android.view.View
+import android.view.ViewGroup
 import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.NonNull
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.expertapplication.Models.CreateGigApiModel
 import com.example.expertapplication.R
@@ -34,11 +36,12 @@ import org.json.JSONObject
 import java.io.ByteArrayOutputStream
 import java.io.File
 
+
 class CreateGigsActivity : AppCompatActivity(), ParameterService.ResponseInterfaces,
     ParameterService.ResponseErrorInterface {
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var createGigButton: View
-    private lateinit var categoryEditText: EditText
+    private lateinit var categoryEditText: View
     private lateinit var titleEditText: EditText
     private lateinit var subCategoryEditText: EditText
     private lateinit var description: EditText
@@ -48,6 +51,8 @@ class CreateGigsActivity : AppCompatActivity(), ParameterService.ResponseInterfa
     private var isCamera: Boolean = true
     private var imageUrl = ""
     private var userId: String = ""
+    private var category=""
+    private lateinit var spinner: Spinner
 
     companion object {
         private const val IMAGE_PICK_CODE = 1000
@@ -61,6 +66,7 @@ class CreateGigsActivity : AppCompatActivity(), ParameterService.ResponseInterfa
         idViews()
         onClickListener()
         bottomSheetDialog()
+        spinner2Fun()
     }
 
     private fun idViews() {
@@ -85,6 +91,8 @@ class CreateGigsActivity : AppCompatActivity(), ParameterService.ResponseInterfa
         createGigButton.setOnClickListener {
             createGigfun()
         }
+        spinner= findViewById(R.id.spinnerforcategory)
+
     }
 
     @SuppressLint("InflateParams")
@@ -113,15 +121,15 @@ class CreateGigsActivity : AppCompatActivity(), ParameterService.ResponseInterfa
 
     private fun setValidation(): Boolean {
         // Check for a valid email address.
-        if (categoryEditText.text.toString() == "") {
-            Sneaker.with(this) // Activity, Fragment or ViewGroup
-                .setMessage("Please Enter Your Category")
-                .setDuration(2000)
-                .autoHide(true)
-                .sneakError()
-            //etName.requestFocus()
-            return false
-        }
+//        if (categoryEditText.text.toString() == "") {
+//            Sneaker.with(this) // Activity, Fragment or ViewGroup
+//                .setMessage("Please Enter Your Category")
+//                .setDuration(2000)
+//                .autoHide(true)
+//                .sneakError()
+//            //etName.requestFocus()
+//            return false
+//        }
         if (titleEditText.text.toString() == "") {
             Sneaker.with(this) // Activity, Fragment or ViewGroup
                 .setMessage("Please Enter Your GigTitle")
@@ -287,13 +295,13 @@ class CreateGigsActivity : AppCompatActivity(), ParameterService.ResponseInterfa
         if (setValidation()) {
             val jsonObject = JSONObject()
             val title = titleEditText.text.toString()
-            val category = categoryEditText.text.toString()
+//            val category = categoryEditText.toString()
             val subcategory = subCategoryEditText.text.toString()
             val description = description.text.toString()
 
             jsonObject.put("user_id", shareMemory.userId)
             jsonObject.put("gig_title", title)
-            jsonObject.put("category", category)
+            jsonObject.put("category_id", "1")
             jsonObject.put("sub_category", subcategory)
             jsonObject.put("description", description)
             jsonObject.put("image", imageUrl)
@@ -319,6 +327,79 @@ class CreateGigsActivity : AppCompatActivity(), ParameterService.ResponseInterfa
         } catch (e: JSONException) {
             e.printStackTrace()
         }
+    }
+
+    private fun spinner2Fun() {
+        val numbers = arrayListOf<String>(
+            "Select a category",
+            "Graphic Designing",
+            "Programming & Tech",
+            "Digital Marketing",
+            "Website Optimization",
+            "Writing & Translation",
+            "Business Administration",
+            "Lifestyle Industry",
+            "Video & Animation",
+            "Music & Audio",
+            "Business",
+
+            )
+        val plantsList: ArrayList<String> = ArrayList()
+
+        // Initializing an ArrayAdapter
+        val spinnerArrayAdapter: ArrayAdapter<String?> = object : ArrayAdapter<String?>(
+            this, android.R.layout.simple_spinner_dropdown_item, numbers as List<String?>
+        ) {
+            override fun isEnabled(position: Int): Boolean {
+                return if (position == 0) {
+                    // Disable the first item from Spinner
+                    // First item will be use for hint
+                    false
+                } else {
+                    true
+                }
+            }
+
+            @SuppressLint("ResourceAsColor")
+            override fun getDropDownView(
+                position: Int, convertView: View?,
+                parent: ViewGroup?
+            ): View {
+                val view: View = super.getDropDownView(position, convertView, parent)
+                val tv = view as TextView
+                if (position == 0) {
+                    // Set the hint text color gray
+                    tv.setTextColor(ContextCompat.getColor(context, R.color.colorgry))
+                } else {
+                    tv.setTextColor(ContextCompat.getColor(context, R.color.black))
+                }
+                return view
+            }
+        }
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = spinnerArrayAdapter
+        spinner.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    val selectedItemText = parent.getItemAtPosition(position) as String
+                    // If user change the default selection
+                    // First item is disable and it is used for hint
+                    when(selectedItemText){
+                        numbers[0]->{
+                            (view as TextView).setTextColor(ContextCompat.getColor(this@CreateGigsActivity, R.color.gray))
+                        }
+
+                    }
+
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {}
+            }
     }
 
     override fun getError(o: Any?) {

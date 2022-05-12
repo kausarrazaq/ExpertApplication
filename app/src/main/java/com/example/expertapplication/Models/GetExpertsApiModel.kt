@@ -2,7 +2,7 @@ package com.example.expertapplication.Models
 import com.google.gson.annotations.SerializedName
 
 
-data class GigAgainstUserIdApiModel(
+data class GetExpertsApiModel(
     @SerializedName("data")
     val `data`: List<Data> = listOf(),
     @SerializedName("message")

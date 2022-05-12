@@ -15,4 +15,7 @@ public class AppURL {
     public static final String GIGAGAINSTUSERID_URL= BASE_URL+"Users/getGigAgainstUserID";
     public static final String GETUSER_URL= BASE_URL+"Users/user?id=1";
     public static final String USERIMAGE_URL= BASE_URL+"Users/userImage";
+    public static final String RATING_URL= BASE_URL+"Users/rating";
+    public static final String USERPROFILE_URL=BASE_URL+"Users/userProfile";
+    public static final String GETEXPERTS_URL= BASE_URL+"Users/getGigAgainstUserID";
 }

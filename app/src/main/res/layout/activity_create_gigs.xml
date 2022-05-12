@@ -98,7 +98,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/gigtitle" />
 
-            <EditText
+            <View
                 android:id="@+id/categoryEdittext"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
@@ -107,7 +107,6 @@
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/backgroundborder"
                 android:ems="10"
-                android:hint="Graphic Designing"
                 android:elevation="5dp"
                 android:padding="8dp"
                 android:inputType="textPersonName"
@@ -220,13 +219,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/robotobold"
-                android:text="Create Gig"
                 android:textColor="@color/white"
                 android:textSize="18sp"
+                android:text="Save"
                 app:layout_constraintBottom_toBottomOf="@+id/creategigview"
                 app:layout_constraintEnd_toEndOf="@+id/creategigview"
                 app:layout_constraintStart_toStartOf="@+id/creategigview"
                 app:layout_constraintTop_toTopOf="@+id/creategigview" />
+
+            <Spinner
+                android:id="@+id/spinnerforcategory"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:elevation="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/categoryEdittext"
+                app:layout_constraintEnd_toEndOf="@+id/categoryEdittext"
+                app:layout_constraintHorizontal_bias="0.921"
+                app:layout_constraintStart_toStartOf="@+id/categoryEdittext"
+                app:layout_constraintVertical_bias="0.375"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                app:layout_constraintTop_toTopOf="@+id/categoryEdittext"
+                tools:layout_editor_absoluteX="344dp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:hint="Graphic Designing"
+                android:elevation="5dp"
+                android:padding="8dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/categoryEdittext"
+                app:layout_constraintStart_toStartOf="@+id/categoryEdittext"
+                app:layout_constraintTop_toTopOf="@+id/categoryEdittext" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

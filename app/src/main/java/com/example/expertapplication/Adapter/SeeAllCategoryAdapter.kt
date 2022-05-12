@@ -7,16 +7,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.expertapplication.Activities.FilterActivity
+import com.bumptech.glide.Glide
 import com.example.expertapplication.Activities.SeeAllCategoryActivity
-import com.example.expertapplication.Models.GigCategorySearchFilterModel
+import com.example.expertapplication.Models.GigCategorySearchFilterApiModel
 import com.example.expertapplication.R
-import com.example.expertapplication.Models.SeeAllCategoryModel
 
 class SeeAllCategoryAdapter(
     private val mItemClickListener: SeeAllCategoryActivity,
     private var context: Context,
-    private val mList: List<GigCategorySearchFilterModel.Data>
+    private val mList: List<GigCategorySearchFilterApiModel.Data>
 ) :
     RecyclerView.Adapter<SeeAllCategoryAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,7 +28,8 @@ class SeeAllCategoryAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val itemsViewModel = mList[position]
-        holder.nameTextView.text = itemsViewModel.category
+        holder.nameTextView.text = itemsViewModel.categoryName
+        Glide.with(context).load(itemsViewModel.categoryImage).into(holder.imageView1)
 
     }
 

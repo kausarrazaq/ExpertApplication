@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.example.expertapplication.R
 import com.example.expertapplication.Adapter.SeeAllCategoryAdapter
-import com.example.expertapplication.Models.GigCategorySearchFilterModel
+import com.example.expertapplication.Models.GigCategorySearchFilterApiModel
 import com.example.expertapplication.Models.SeeAllCategoryModel
 import com.example.expertapplication.WebService.POSTService
 import com.example.expertapplication.utilis.AppURL
@@ -59,7 +59,7 @@ class SeeAllCategoryActivity : AppCompatActivity(), POSTService.ResponseInterfac
                 val gsonBuilder = GsonBuilder()
                 val gson: Gson = gsonBuilder.create()
                 val userData =
-                    gson.fromJson(`object`.toString(), GigCategorySearchFilterModel::class.java)
+                    gson.fromJson(`object`.toString(), GigCategorySearchFilterApiModel::class.java)
                 categoryAdapter(userData.data)
 
             } else {
@@ -71,7 +71,7 @@ class SeeAllCategoryActivity : AppCompatActivity(), POSTService.ResponseInterfac
         }
     }
 
-    private fun categoryAdapter(data: List<GigCategorySearchFilterModel.Data>) {
+    private fun categoryAdapter(data: List<GigCategorySearchFilterApiModel.Data>) {
         seeAllCategoryAdapter = SeeAllCategoryAdapter(this, this, data)
         val layoutManager = GridLayoutManager(this, 2)
         recyclerView.layoutManager = layoutManager

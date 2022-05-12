@@ -31,13 +31,14 @@
         app:layout_constraintStart_toStartOf="@+id/toolbar_actionbar12"
         app:layout_constraintTop_toTopOf="@+id/toolbar_actionbar12" />
 
-    <TextView
-        android:id="@+id/textView83"
+    <EditText
+        android:id="@+id/ratesedittxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:fontFamily="@font/robotobold"
         android:text="5.0"
+        android:background="@null"
         android:textColor="@color/black"
         android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +51,7 @@
         android:layout_height="32dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toStartOf="@+id/imageView20"
-        app:layout_constraintTop_toBottomOf="@+id/textView83"
+        app:layout_constraintTop_toBottomOf="@+id/ratesedittxt"
         app:srcCompat="@drawable/star" />
 
     <ImageView
@@ -59,7 +60,7 @@
         android:layout_height="32dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toStartOf="@+id/imageView21"
-        app:layout_constraintTop_toBottomOf="@+id/textView83"
+        app:layout_constraintTop_toBottomOf="@+id/ratesedittxt"
         app:srcCompat="@drawable/star" />
 
     <ImageView
@@ -69,7 +70,7 @@
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView83"
+        app:layout_constraintTop_toBottomOf="@+id/ratesedittxt"
         app:srcCompat="@drawable/star" />
 
     <ImageView
@@ -78,7 +79,7 @@
         android:layout_height="32dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toEndOf="@+id/imageView21"
-        app:layout_constraintTop_toBottomOf="@+id/textView83"
+        app:layout_constraintTop_toBottomOf="@+id/ratesedittxt"
         app:srcCompat="@drawable/star" />
 
     <ImageView
@@ -87,7 +88,7 @@
         android:layout_height="32dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toEndOf="@+id/imageView22"
-        app:layout_constraintTop_toBottomOf="@+id/textView83"
+        app:layout_constraintTop_toBottomOf="@+id/ratesedittxt"
         app:srcCompat="@drawable/star" />
 
     <TextView

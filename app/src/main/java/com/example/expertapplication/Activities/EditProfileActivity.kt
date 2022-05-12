@@ -22,6 +22,7 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.expertapplication.Models.UserImageApiModel
+import com.example.expertapplication.Models.UserProfileApiModel
 import com.example.expertapplication.R
 import com.example.expertapplication.WebService.POSTService
 import com.example.expertapplication.utilis.AppURL
@@ -29,6 +30,7 @@ import com.example.expertapplication.utilis.ShareMemory
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.google.gson.JsonSyntaxException
 import com.irozon.sneaker.Sneaker
 import org.json.JSONException
 import org.json.JSONObject
@@ -40,7 +42,7 @@ class EditProfileActivity : AppCompatActivity(), POSTService.ResponseInterface {
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var costEditText: EditText
     private lateinit var costTraveleditText: EditText
-    private lateinit var locationEditText: EditText
+    private lateinit var locationEditText: View
     private lateinit var aboutEditText: EditText
     private lateinit var beforeEditImage: ImageView
     private lateinit var afterEditImage: ImageView
@@ -70,7 +72,7 @@ class EditProfileActivity : AppCompatActivity(), POSTService.ResponseInterface {
         costTraveleditText = findViewById(R.id.costtravel)
         beforeEditImage = findViewById(R.id.beforeeditpic)
         afterEditImage = findViewById(R.id.aftereditpic)
-        locationEditText = findViewById(R.id.locationedittext)
+        locationEditText = findViewById(R.id.location)
         aboutEditText = findViewById(R.id.aboutedittext)
         userNameTv = findViewById(R.id.namechangeTV)
         shareMemory = ShareMemory.mInstence
@@ -90,11 +92,12 @@ class EditProfileActivity : AppCompatActivity(), POSTService.ResponseInterface {
 
     private fun onClickListener() {
         savebtn.setOnClickListener {
-            if (setValidation()) {
-                finish()
-            } else {
-//                Toast.makeText(this, "Please Fill All fields", Toast.LENGTH_SHORT).show()
-            }
+//            if (setValidation()) {
+//                finish()
+//            } else {
+////                Toast.makeText(this, "Please Fill All fields", Toast.LENGTH_SHORT).show()
+//            }
+            userProfileApi()
         }
     }
 
@@ -152,15 +155,15 @@ class EditProfileActivity : AppCompatActivity(), POSTService.ResponseInterface {
             //etName.requestFocus()
             return false
         }
-        if (locationEditText.text.toString() == "") {
-            Sneaker.with(this) // Activity, Fragment or ViewGroup
-                .setMessage("Please Enter Your Location")
-                .setDuration(2000)
-                .autoHide(true)
-                .sneakError()
-            //etName.requestFocus()
-            return false
-        }
+//        if (locationEditText.toString() == "") {
+//            Sneaker.with(this) // Activity, Fragment or ViewGroup
+//                .setMessage("Please Enter Your Location")
+//                .setDuration(2000)
+//                .autoHide(true)
+//                .sneakError()
+//            //etName.requestFocus()
+//            return false
+//        }
         return true
     }
 
@@ -305,19 +308,65 @@ class EditProfileActivity : AppCompatActivity(), POSTService.ResponseInterface {
     }
 
 
+    private fun userProfileApi() {
+        if (setValidation()) {
+            val jsonObject = JSONObject()
+
+
+            val lat = locationEditText.toString()
+            val cost= costEditText.text.toString()
+            val travel= costTraveleditText.text.toString()
+            val about= aboutEditText.text.toString()
+
+            jsonObject.put("user_id", shareMemory.userId)
+            jsonObject.put("lat",lat )
+            jsonObject.put("longi",lat)
+            jsonObject.put("cost",cost)
+            jsonObject.put("travel",travel)
+            jsonObject.put("about",about)
+
+
+            val postService = POSTService(this, this)
+            postService.putData(jsonObject, AppURL.USERPROFILE_URL)
+        }
+    }
     override fun getResponse(o: Any?) {
         val `object` = o as JSONObject
         try {
-            val status = `object`.getBoolean("status")
-            if (status) {
+            val status = `object`.getString("status")
+            if (status == "OK") {
                 val gsonBuilder = GsonBuilder()
                 val gson: Gson = gsonBuilder.create()
                 val userData = gson.fromJson(`object`.toString(), UserImageApiModel::class.java)
                 shareMemory.profileImageUrl = userData.data.image
+
+
             }
-        } catch (e: JSONException) {
-            e.printStackTrace()
+            val status1 = `object`.getBoolean("status")
+            if (status1 == true) {
+
+                val gsonBuilder = GsonBuilder()
+                val gson: Gson = gsonBuilder.create()
+                val userData = gson.fromJson(`object`.toString(), UserProfileApiModel::class.java)
+                // getQuestionAdapterFun(userData.data)
+                shareMemory.userName = userData.data.name
+                shareMemory.profileImageUrl = userData.data.image
+                shareMemory.userEmail = userData.data.email
+                finish()
+
+            } else {
+            val message = `object`.getString("message")
+            Sneaker.with(this) // Activity, Fragment or ViewGroup
+                .setMessage(message)
+                .setDuration(2000)
+                .autoHide(true)
+                .sneakError()
         }
+    }catch (e: JSONException) {
+        e.printStackTrace()
+    }catch (e: JsonSyntaxException){
+        e.printStackTrace()
+    }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

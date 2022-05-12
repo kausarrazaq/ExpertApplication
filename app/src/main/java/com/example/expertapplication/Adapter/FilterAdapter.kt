@@ -12,14 +12,14 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.expertapplication.Activities.FilterActivity
-import com.example.expertapplication.Models.GigCategorySearchFilterModel
+import com.example.expertapplication.Models.GigCategorySearchFilterApiModel
 import com.example.expertapplication.R
 
 
 class FilterAdapter(
     private val mItemClickListener: FilterActivity,
     private var context: Context,
-    private val mList: List<GigCategorySearchFilterModel.Data>
+    private val mList: List<GigCategorySearchFilterApiModel.Data>
 ) :
     RecyclerView.Adapter<FilterAdapter.ViewHolder>() {
     var selectedCategory: ArrayList<String> = ArrayList()
@@ -40,9 +40,9 @@ class FilterAdapter(
     override fun onBindViewHolder(holder: ViewHolder, @SuppressLint("RecyclerView") position: Int) {
 
         val itemsViewModel = mList[position]
-        holder.categoryTextView.text = itemsViewModel.category
+        holder.categoryTextView.text = itemsViewModel.categoryName
 
-        if (selectedCategory.contains(itemsViewModel.category)) {
+        if (selectedCategory.contains(itemsViewModel.categoryName)) {
             holder.cardView.background.setColorFilter(
                 ContextCompat.getColor(context, R.color.black),
                 PorterDuff.Mode.MULTIPLY
@@ -59,10 +59,10 @@ class FilterAdapter(
         }
         holder.itemView.setOnClickListener { v ->
 
-            if (selectedCategory.contains(itemsViewModel.category))
-                selectedCategory.remove(itemsViewModel.category)
+            if (selectedCategory.contains(itemsViewModel.categoryName))
+                selectedCategory.remove(itemsViewModel.categoryName)
             else
-                selectedCategory.add(itemsViewModel.category)
+                selectedCategory.add(itemsViewModel.categoryName)
 
             notifyDataSetChanged()
         }

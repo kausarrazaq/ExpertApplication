@@ -34,7 +34,7 @@
         app:layout_constraintVertical_bias="0.516" />
 
     <View
-        android:id="@+id/view24"
+        android:id="@+id/location"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="@color/graycolor"
@@ -53,6 +53,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view24" />
+        app:layout_constraintTop_toBottomOf="@+id/location" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

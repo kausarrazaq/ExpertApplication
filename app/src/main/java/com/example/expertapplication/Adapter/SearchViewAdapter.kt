@@ -30,7 +30,7 @@ RecyclerView.Adapter<SearchViewAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val itemsViewModel = mList[position]
         holder.nameTextView.text = itemsViewModel.name
-        holder.category.text= itemsViewModel.category
+        holder.category.text= itemsViewModel.subCategory
         Glide.with(context).load(itemsViewModel.image).into(holder.imageView)
     }
     override fun getItemCount(): Int {

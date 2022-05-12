@@ -29,11 +29,13 @@ class CreateGigAdapter(
 
     }
 
-    @SuppressLint("ResourceAsColor")
+    @SuppressLint("ResourceAsColor", "CheckResult")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val itemsViewModel = mList[position]
-        holder.expertTextView.text = itemsViewModel.category
-        Glide.with(context).load(itemsViewModel.image).into(holder.imageView1)
+        holder.expertTextView.text = itemsViewModel.subCategory
+        Glide.with(context).load(itemsViewModel.gigImage).into(holder.imageView1)
+        holder.nameTextView.text=itemsViewModel.userName
+        Glide.with(context).load(itemsViewModel.userImage).into(holder.profileimage)
         holder.itemView.setOnClickListener {
             val intent = Intent(it.context, UserProfileActivity::class.java)
             it.context.startActivity(intent)
@@ -49,6 +51,7 @@ class CreateGigAdapter(
         var nameTextView: TextView = itemView.findViewById(R.id.nametxtview)
         var imageView1: ImageView = itemView.findViewById(R.id.graphicpic)
         var expertTextView: TextView = itemView.findViewById(R.id.experttxtview)
+        var profileimage: ImageView= itemView.findViewById(R.id.profilepic)
 
     }
 

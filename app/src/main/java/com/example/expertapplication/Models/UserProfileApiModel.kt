@@ -2,9 +2,9 @@ package com.example.expertapplication.Models
 import com.google.gson.annotations.SerializedName
 
 
-data class SearchexpertApiModel(
+data class UserProfileApiModel(
     @SerializedName("data")
-    val `data`: List<Data> = listOf(),
+    val `data`: Data = Data(),
     @SerializedName("message")
     val message: String = "",
     @SerializedName("status")
@@ -15,16 +15,12 @@ data class SearchexpertApiModel(
         val aCode: String = "",
         @SerializedName("about")
         val about: String = "",
-        @SerializedName("category_id")
-        val categoryId: String = "",
         @SerializedName("code")
         val code: String = "",
         @SerializedName("cost")
         val cost: String = "",
         @SerializedName("created_at")
         val createdAt: String = "",
-        @SerializedName("description")
-        val description: String = "",
         @SerializedName("email")
         val email: String = "",
         @SerializedName("email_code")
@@ -37,12 +33,6 @@ data class SearchexpertApiModel(
         val fireBaseId: String = "",
         @SerializedName("g_token")
         val gToken: String = "",
-        @SerializedName("gig_id")
-        val gigId: String = "",
-        @SerializedName("gig_image")
-        val gigImage: String = "",
-        @SerializedName("gig_title")
-        val gigTitle: String = "",
         @SerializedName("id")
         val id: String = "",
         @SerializedName("image")
@@ -61,12 +51,8 @@ data class SearchexpertApiModel(
         val phoneNumber: String = "",
         @SerializedName("status")
         val status: String = "",
-        @SerializedName("sub_category")
-        val subCategory: String = "",
         @SerializedName("travel")
         val travel: String = "",
-        @SerializedName("user_id")
-        val userId: String = "",
         @SerializedName("user_type")
         val userType: String = ""
     )
